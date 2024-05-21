@@ -1,0 +1,5 @@
+GET     /user/:id          controllers.UserController.getUser(id: String)
+GET     /users             controllers.UserController.getAllUsers
+POST    /user              controllers.UserController.createUser
+PUT     /user/:id          controllers.UserController.updateUser(id: String)
+DELETE  /user/:id          controllers.UserController.deleteUser(id: String)
