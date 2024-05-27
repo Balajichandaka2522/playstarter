@@ -1,0 +1,15 @@
+@(bookForm :Form[Book])
+
+@import helper._
+
+@main("edit book"){
+<h1>edit book</h1>
+@helper.form(action = routes.BookController.update()) {
+@helper.inputText(bookForm("id"), '_label -> "ID", 'placeholder -> "Enter book ID")
+@helper.inputText(bookForm("title"), '_label -> "Title", 'placeholder -> "Enter book title")
+@helper.inputText(bookForm("author"), '_label -> "Author", 'placeholder -> "Enter author name")
+@helper.inputText(bookForm("price"), '_label -> "Price", 'placeholder -> "Enter book price", 'type -> "number", 'step -> "0.01")
+<button type="submit">save changes</button>
+
+}
+}

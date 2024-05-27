@@ -1,0 +1,21 @@
+@(bookFrom: Form[Book])
+
+@layout("Edit Book"){
+
+        <h1>Edit Book</h1>
+        <form action="@routes.BookController.update()" method="post">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id" value="@bookFrom("id").value">
+            <br><br>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" value="@bookFrom("title").value">
+            <br><br>
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" value="@bookFrom("price").value">
+            <br><br>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="@bookFrom("author").value">
+            <br><br>
+            <input type="submit" value="Edit Book"/>
+        </form>
+}

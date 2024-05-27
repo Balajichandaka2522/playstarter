@@ -1,0 +1,12 @@
+@(book :Book)
+@import helper._
+@main("show"){
+<h1>Book Details</h1>
+<h1>id--     @book.id</h1>
+<h1>title--  @book.title</h1>
+<h1>author-- @book.author</h1>
+<h1>price--  @book.price</h1>
+<a href="@routes.BookController.edit(book.id)">edit</a>
+<a href="@routes.BookController.destroy(book.id)">delete</a>
+}
+

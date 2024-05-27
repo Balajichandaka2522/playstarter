@@ -1,0 +1,16 @@
+@(books :Set[Book])
+@main("show all"){
+<h1>all books</h1>
+@for(book <- books){
+<li>
+    <a href="@routes.BookController.show(book.id)"><ol color="red"> @book.title</ol></a>
+    <ol>@book.id</ol>
+
+    <ol>@book.price</ol>
+    <ol>@book.author</ol>
+</li>
+}
+@helper.form(action=routes.BookController.create()){
+<button type="submit">Create new Book</button>
+}
+}
