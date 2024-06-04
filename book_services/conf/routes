@@ -1,0 +1,27 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index()
+POST    /fetch                       controllers.HomeController.fetchDataFromPostRequest()
+GET /author/:name                    controllers.HomeController.getAut(name:String)
+GET /publisher/:name                    controllers.HomeController.getPub(name:String)
+
+GET /rpub/:name                     controllers.HomeController.getPub(name:String)
+GET /rkeys                          controllers.HomeController.rkeys()
+GET /rbook/:name                           controllers.HomeController.getBook(name:String)
+GET /rbooks                             controllers.HomeController.getrBooks()
+POST /rbook/update                     controllers.HomeController.update()
+POST /rbook/delete                      controllers.HomeController.deleterBook()
+
+
+
+POST    /book/show                    controllers.HomeController.show()
+GET     /book/create                          controllers.HomeController.create()
+POST /book/create                    controllers.HomeController.save()
+GET  /book/:p/:n/:a/:s/:pub                   controllers.HomeController.destroy(p:Integer,n:String,a:String,s:String,pub:String)
+GET /book/edit/:p/:n/:a/:s/:pub              controllers.HomeController.edit(p:Integer,n:String,s:String,a:String,pub:String)
+GET /book/sort/:param                      controllers.HomeController.sort(param:String)
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
